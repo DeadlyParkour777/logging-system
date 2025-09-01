@@ -1,0 +1,14 @@
+http:
+  port: 8082
+
+clickhouse:
+  address: "clickhouse-server:9000"
+  database: "default"
+  username: "default"
+  password: "password"
+
+redis:
+  address: "redis:6379"
+  password: ""
+  db: 0
+  cache_ttl_seconds: 5

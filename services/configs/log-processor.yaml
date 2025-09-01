@@ -1,0 +1,12 @@
+kafka:
+  brokers:
+    - "kafka:29092"
+  topic: "logs"
+  alerts_topic: "alerts"
+  group_id: "log-processors-group"
+
+clickhouse:
+  address: "clickhouse-server:9000"
+  database: "default"
+  username: "default"
+  password: "password"

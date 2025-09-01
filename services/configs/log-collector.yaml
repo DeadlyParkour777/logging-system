@@ -1,0 +1,7 @@
+grpc:
+  port: 8081
+
+kafka:
+  brokers:
+    - "kafka:29092"
+  topic: "logs"

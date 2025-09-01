@@ -12,11 +12,10 @@
 *.env.*
 !*.env.example
 
-temp_submissions/
-
 .idea/
 .vscode/
 *.DS_Store
 
-dump.rdb
-*.rdb
+node_modules/
+dist/
+*.log
