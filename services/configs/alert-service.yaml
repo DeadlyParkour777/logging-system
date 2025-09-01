@@ -1,0 +1,5 @@
+kafka:
+  brokers:
+    - "kafka:29092"
+  topic: "alerts"
+  group_id: "alert-service-group"

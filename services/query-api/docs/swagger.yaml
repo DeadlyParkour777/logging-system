@@ -1,0 +1,61 @@
+basePath: /
+definitions:
+  models.LogEntry:
+    properties:
+      level:
+        type: string
+      message:
+        type: string
+      metadata:
+        additionalProperties:
+          type: string
+        type: object
+      service_name:
+        type: string
+      timestamp:
+        type: string
+    type: object
+host: localhost:8082
+info:
+  contact: {}
+  description: API для поиска и фильтрации логов, сохраненных в системе.
+  title: Logging System - Query API
+  version: "1.0"
+paths:
+  /logs:
+    get:
+      consumes:
+      - application/json
+      description: Возвращает массив записей логов на основе query-параметров.
+      parameters:
+      - description: Фильтр по имени сервиса
+        in: query
+        name: service_name
+        type: string
+      - description: Фильтр по уровню лога (INFO, ERROR)
+        in: query
+        name: level
+        type: string
+      - description: Полнотекстовый поиск по сообщению
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Успешный ответ с массивом логов
+          schema:
+            items:
+              $ref: '#/definitions/models.LogEntry'
+            type: array
+        "500":
+          description: Внутренняя ошибка сервера
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Поиск и фильтрация логов
+      tags:
+      - Logs
+swagger: "2.0"

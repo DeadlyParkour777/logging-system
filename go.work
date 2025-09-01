@@ -1,0 +1,10 @@
+go 1.24.4
+
+use (
+	./pkg
+	./services/alert-service
+	./services/log-collector
+	./services/log-processor
+	./services/query-api
+	./services/test-client
+)
